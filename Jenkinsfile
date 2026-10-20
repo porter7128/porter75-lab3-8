@@ -37,7 +37,7 @@ pipeline {
                     // The secret contains MongoDB credentials (username/password) used by both Mongo and Mongo Express
 
                     // Apply all required Kubernetes manifests in correct order
-                    sh 'kubectl apply -f mongo-secret'       // Secret containing credentials
+                 //   sh 'kubectl apply -f mongo-secret'       // Secret containing credentials
                     sh 'kubectl apply -f mongo.yaml'              // MongoDB StatefulSet or Deployment
                     sh 'kubectl apply -f mongo-configmap.yaml'    // ConfigMap for Mongo initialization parameters
                     sh 'kubectl apply -f mongo-express.yaml'      // Mongo Express web interface
