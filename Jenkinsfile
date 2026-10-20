@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Store environment variables used throughout the pipeline
-        DOCKER_CREDENTIALS_ID = 'porter75'        // Jenkins credential ID for authenticating with Docker Hub
+        DOCKER_CREDENTIALS_ID = 'roseaw-dockerhub'        // Jenkins credential ID for authenticating with Docker Hub
         GITHUB_URL = 'https://github.com/porter7128/porter75-lab3-8'  // GitHub repository containing Kubernetes YAML files
         KUBECONFIG = credentials('porter75-225')             // Jenkins stored credential for accessing your Kubernetes cluster
     }
@@ -21,7 +21,7 @@ pipeline {
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[
                         url: "${GITHUB_URL}",
-                        credentialsId: 'porter75'
+                        credentialsId: 'roseaw-dockerhub'
                     ]]
                 ])
             }
